@@ -2,5 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "description": "One PR per package, combining its update across all Python managers (requirements.txt + manifest.json)",
+      "matchManagers": ["pip_requirements", "homeassistant-manifest"],
+      "groupName": "{{depName}}"
+    }
   ]
 }
